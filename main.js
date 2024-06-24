@@ -1,14 +1,14 @@
-function showPage(p) {
-    document.querySelectorAll('div').forEach(div =>{
+function showPage(page) {
+    document.querySelectorAll('div').forEach(div => {
         div.style.display = 'none';
     });
-    document.querySelector('#${p}').style.display = 'flex';
-
+    document.querySelector(`#${page}`).style.display = 'flex';
 }
-document.addEventListener('DOMContentLoder',function(){
-document.querySelectorAll('button').forEach(button => {
-    button.onclick = functional() {
-        showPage(this.dataset.p);
-    }
-})
-})
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('button').forEach(button => {
+        button.onclick = function() {
+            showPage(this.dataset.page);
+        };
+    });
+});
